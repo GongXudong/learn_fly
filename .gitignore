@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# config of pycharm
+.idea
+
+# custom
+dcsData/origin_data/
+dcsData/processed_data/
+dcsData/process_data.ipynb

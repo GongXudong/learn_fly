@@ -1,0 +1,36 @@
+[{
+  "csv_file": "origin_data/Task1.csv",
+  "aircraft_id": "201",
+  "goal_skips": [5, 8, 10],
+  "output_dir": "processed_data"
+}, {
+  "csv_file": "origin_data/Task2.csv",
+  "aircraft_id": "201",
+  "goal_skips": [5, 8, 10],
+  "output_dir": "processed_data"
+}, {
+  "csv_file": "origin_data/Task3.csv",
+  "aircraft_id": "201",
+  "goal_skips": [5, 8, 10],
+  "output_dir": "processed_data"
+}, {
+  "csv_file": "origin_data/Task5.csv",
+  "aircraft_id": "201",
+  "goal_skips": [5, 8, 10],
+  "output_dir": "processed_data"
+}, {
+  "csv_file": "origin_data/Task6.csv",
+  "aircraft_id": "AB01",
+  "goal_skips": [5, 8, 10],
+  "output_dir": "processed_data"
+}, {
+  "csv_file": "origin_data/Task7.csv",
+  "aircraft_id": "201",
+  "goal_skips": [5, 8, 10],
+  "output_dir": "processed_data"
+}, {
+  "csv_file": "origin_data/Task4108-121111-DCS.csv",
+  "aircraft_id": "201",
+  "goal_skips": [5, 8, 10],
+  "output_dir": "processed_data"
+}]
