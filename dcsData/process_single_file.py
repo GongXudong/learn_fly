@@ -37,7 +37,7 @@ def read_csv_file():
     #     data = np.loadtxt(f, delimiter=',', skiprows=1, usecols=[])
     df = pd.read_csv(csv_file_path.resolve())
     df = df.astype({'Id': 'str'})
-    return df[df['Id'] == args.aircraft_id][['Longitude', 'Latitude', 'Altitude', 'Roll', 'Pitch', 'Yaw', 'Throttle', 'RollControlPosition', 'PitchControlPosition', 'YawControlPosition']]
+    return df[df['Id'] == args.aircraft_id][['Longitude', 'Latitude', 'Altitude', 'Roll', 'Pitch', 'Yaw', 'TAS', 'Throttle', 'RollControlPosition', 'PitchControlPosition', 'YawControlPosition']]
     # return df[(df['Id'] == args.aircraft_id) & (df['RollControlPosition'] > 0)][['Longitude', 'Latitude', 'Altitude', 'Roll', 'Pitch', 'Yaw', 'Throttle', 'RollControlPosition', 'PitchControlPosition', 'YawControlPosition']]
 
 
@@ -46,7 +46,7 @@ def main():
     arr = np.array(df)
     print(arr.shape)
 
-    arr1 = np.array([[*arr[i], *arr[i + args.goal_skip][:6], args.goal_skip] for i in range(len(arr) - args.goal_skip)])
+    arr1 = np.array([[*arr[i], *arr[i + args.goal_skip][:7], args.goal_skip] for i in range(len(arr) - args.goal_skip)])
     print(arr1.shape)
 
     output_dir_path = base_path / Path(args.output_dir)
@@ -57,9 +57,9 @@ def main():
     output_file_path = output_dir_path / (csv_file_path.stem + "_skip_" + str(args.goal_skip) + csv_file_path.suffix)
 
     column_names = [
-        'Longitude', 'Latitude', 'Altitude', 'Roll', 'Pitch', 'Yaw',
+        'Longitude', 'Latitude', 'Altitude', 'Roll', 'Pitch', 'Yaw', 'TAS',
         'Throttle', 'RollControlPosition', 'PitchControlPosition', 'YawControlPosition',
-        'GoalLongitude', 'GoalLatitude', 'GoalAltitude', 'GoalRoll', 'GoalPitch', 'GoalYaw', 'GoalSkip']
+        'GoalLongitude', 'GoalLatitude', 'GoalAltitude', 'GoalRoll', 'GoalPitch', 'GoalYaw', 'GoalTAS', 'GoalSkip']
     processed_data_df = pd.DataFrame(data=arr1, columns=column_names)
     processed_data_df.to_csv(output_file_path.resolve(), sep=',', index=False)
 

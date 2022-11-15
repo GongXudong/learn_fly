@@ -135,3 +135,5 @@ dmypy.json
 dcsData/origin_data/
 dcsData/processed_data/
 dcsData/process_data.ipynb
+
+src/*.ipynb
